@@ -1,0 +1,1085 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+/* HTML element (SMACSS base) rules */
+@import "normalize";
+
+/* Layout rules */
+@import "layouts/responsive";
+
+/* Component (SMACSS module) rules */
+@import "components/misc";
+// Optionally, add your own components here.
+@import "print";
+
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */
+$main:#b9b209;
+$textcolor:#898989;
+
+body{
+	 font-family: "微軟正黑體",Helvetica,Arial;
+	img{
+		height: auto !important;
+	}
+}
+body.section-product{
+	#content{
+		.breadcrumb{
+			display: none;
+		}
+		.ctools-auto-submit-full-form.ctools-auto-submit-processed{
+			text-align: center !important;
+
+			#edit-field-product-category-target-id-wrapper{
+				padding: 8px 30px;
+				display: inline-block;
+				border-top:1px $main solid;
+				border-bottom:1px $main solid;
+				#edit-field-product-category-target-id-all{
+					display: none;
+				}
+
+				.form-item.form-type-bef-link{
+					a{
+						border: transparent !important;
+						&:hover{
+							border-bottom:1px $main solid !important;
+						}
+					}
+					a.active{
+						border-bottom:1px $main solid !important;
+					}
+				}
+			}
+		}
+	}
+}
+#all_banner{
+	position: relative;
+	.region-all-banner{
+		.fullwidth-container{
+			.tp-bannertimer{
+				background-color: rgba(194,189,8,0.3);
+			}
+			border-bottom:10px #c2bd08 solid;
+		}
+	}
+}
+#backtotop{
+	z-index: 100;
+}
+#header{
+	position: relative;
+	.fullwidth-container{
+		.tp-bannertimer{
+			background-color: rgba(194,189,8,0.3);
+		}
+		border-bottom:10px #c2bd08 solid;
+	}
+	a{
+		color: #FFF;
+		text-decoration: none;
+	}
+	a#logo{
+		position: absolute;
+		top: 20px;
+		left: 50px;
+		z-index: 90;
+	}
+
+	#block-menu-block-1{
+		position: absolute;
+		right: 30px;
+		top: 50px;
+		z-index: 90;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #FFF;
+		ul.menu{
+			margin: 0px;
+			padding: 0px;
+			li{
+				list-style-type: none;
+				list-style-image: none;
+				display: inline-block;
+				padding: 0px 10px;
+				position: relative;
+				a{
+					color: #FFF;
+				}
+				&:after{
+					content: ' ';
+					display: block;
+					width: 30px;
+					height: 4px;
+					background: transparent;
+					position: absolute;
+					bottom: 0px;
+					left: 50%;
+					margin-left: -15px;
+					transition:all 0.1s linear;
+					-o-transition:all 0.1s linear;
+					-webkit-transition:all 0.1s linear;
+					-moz-transition:all 0.1s linear;
+				}
+				&:hover{
+					&:after{
+						background:#FFF;
+						bottom: -10px;
+					}
+				}
+			}
+			li.active{
+				&:after{
+					background:#FFF;
+					bottom: -10px;
+				}
+			}
+			li.active-trail{
+				&:after{
+					background:#FFF;
+					bottom: -10px;
+				}
+			}
+			li.menu-mlid-629{
+				
+				position: relative;
+				bottom: -2px;
+				margin-right: 15px;
+				a{
+					width: 40px;
+					display: inline-block;
+					overflow: hidden;
+					font-size: 22px;
+					white-space: nowrap;
+					position: relative;
+					bottom: -1px;
+					&:before{
+						margin-right:20px;
+					}
+					.link-badge-text{
+						color: transparent;
+					}
+				}
+				&:after{
+					display: none;
+				}
+				.link-badge-badge-wrapper{
+					position: absolute;
+					right: 18px;
+					top: -1px;
+					padding: 0px 2px;
+					box-shadow: none;
+					.link-badge{
+						padding: 0px 2px;
+					}
+				}
+			}
+		}
+	}
+	.responsive-menus{
+
+		span.toggler{
+			float: right;
+			margin-top: -70px;
+			margin-right: 20px;
+			border-radius: 50px;
+			width: 35px;
+			height: 35px;
+			background-color:#fff;
+			color: $main; 
+			line-height: 36px;
+		}
+		#rm-removed{
+			background-color: #101010;
+			box-shadow: none;
+			ul#rm-removed{
+				li{
+					a{
+						color: $main;
+						text-align: center;
+					}
+				
+				}
+				li.first a{
+					border-top:1px solid rgba(255, 255, 255, 0.5);
+				}
+			}			
+		}
+	}
+}
+
+#main{
+	padding-top: 25px;
+	min-height: 500px;
+	table{
+		font-size: 14px;
+		table-layout: fixed; 
+  		width: 100%; 
+  		text-align: center;
+  		a.active{
+  			color: $main;
+  		}
+  		td{
+  			width: 1px;
+			/**white-space: nowrap; // 自适應寬度**/
+			word-break:  keep-all; // 避免長單詞截斷，保持全部 
+			height: 32px;
+			vertical-align: middle;
+  		}
+		thead{
+			tr{
+				border-bottom: 1px solid #000;
+				background-color: #b9b5ae;
+				th{
+					color: #313131;
+					border: 1px #000 solid;
+					text-align: center;
+					height: 32px;
+					vertical-align: middle;
+				} 
+			}
+		}
+		tbody{
+			border: 1px solid #000;
+			tr.odd,tr.even{
+				border: 0px;
+				vertical-align: middle;
+				background-color: transparent;
+				border: 1px solid #000;
+				input[type="text"]{
+					text-align: center;
+					border: 1px #000 solid;
+					width: 50%;
+				}
+				input[type="submit"]{
+					border: 0px;
+					padding: 5px 12px;
+					border-radius: 5px;
+					background-color: #00437b;
+					color: #FFF;
+				}
+			}
+		}
+		.views-field-edit-quantity{
+			span.commerce-quantity-plusminus-link{display: none;}
+		}
+	}
+	#content{
+		position: relative;
+		font-size: 14px;
+		color: #898989;
+		padding-top: 50px;
+		a{
+			text-decoration: none;
+			color: $main;
+		}
+		.ajax-progress-throbber {
+		  display: none;
+		}
+		.breadcrumb{
+			text-align: right;
+			border-bottom: 1px solid $main;
+			margin-bottom: 10px;
+		}
+		.ctools-auto-submit-full-form.ctools-auto-submit-processed{
+			text-align: right;
+		    margin-bottom: 25px;
+			@include zen-grid-item-base();
+			#edit-field-product-sort-target-id-all{
+				display: none;
+			}
+			.views-exposed-widget{
+				float: none;
+				padding: 0px;
+				margin: 0px;
+				.form-item.form-type-bef-link{
+					display: inline-block;
+					position: relative;
+					margin-right: 10px;
+					a{
+						display: inline-block;
+						padding: 0px 5px;
+						border: 1px solid transparent;
+						&:hover{
+							border: 1px solid $main;
+						}
+					}
+					a.active{
+						border: 1px solid $main;
+					}
+					&:after{
+						content:'|';
+						position: absolute;
+						right: -12px;
+						top: 0px;
+						color: $main;
+					}
+					&:last-child{
+						&:after{
+							content:'';
+						}
+					}
+				}
+			}
+		}
+		ul.article-list{
+			margin: 0px;
+			padding: 0px;
+			li.article-block{
+				list-style-image: none;
+				list-style-type: none;
+				margin-bottom: 30px;
+				.views-field-created{
+					font-size: 14px;
+				}
+				h2.title{
+					margin: 0px;
+					line-height: 24px;
+					font-size: 21px;
+				}
+				
+			}
+		}
+		#block-menu-block-2{
+			ul.menu{
+				margin: 0px;
+				padding:0px;
+				text-align: center;
+				li{
+					list-style-type: none;
+					list-style-image: none;
+					font-size: 21px;
+				}
+				li.menu-mlid-656{
+					margin-bottom: 40px;
+					a{
+						overflow: hidden;
+						width: 150px;
+						height: 138px;
+						display: inline-block;
+						text-indent: -99999px;
+						overflow: hidden;
+						background-size: 100% auto;
+
+						background: url(../images/logo150.png) no-repeat;
+						
+
+					}
+				}
+				li.menu-mlid-657,li.menu-mlid-658,li.menu-mlid-659,li.menu-mlid-961{
+					display: inline-block;
+					padding: 0px 10px 25px 5px;
+					position: relative;
+					/*writing-mode:vertical-lr;
+					-webkit-writing-mode: vertical-lr;
+					-o-writing-mode: vertical-lr;
+					-moz-writing-mode: vertical-lr;
+					-ms-writing-mode: vertical-lr;*/
+					font-size:24px;
+					width: 24px;
+					line-height:30px; 
+					
+					&:after{
+						content:' ';
+						display: block;
+						width: 1px;
+						height: 50px;
+						background: $main;
+						position: absolute;
+						top: 1px;
+						right: -2px;
+					}
+					&:before{
+						content:'◆';
+						color: transparent;
+						font-size: 14px;
+						position: absolute;
+						left: 50%;
+						bottom: 0px;
+						margin-left: -5px;
+						transition:all 0.3s ease-in-out;
+						-webkit-transition:all 0.3s ease-in-out;
+						-o-transition:all 0.3s ease-in-out;
+						-moz-transition:all 0.3s ease-in-out;
+					}
+					&:hover{
+						&:before{
+							color: $main;
+						}
+					}
+					
+				}
+				li.menu-mlid-659{
+					&:after{
+						content:'';
+						display: none;
+					}
+				}
+				li.menu-mlid-961{
+					&:after{
+						content:'';
+						display: none;
+					}
+				}
+				li.menu-mlid-660{
+					margin-bottom: 10px;
+					a{
+						display: inline-block;
+						width: 127px;
+						height: 66px;
+						overflow: hidden;
+						text-indent: -9999px;
+						background: url(../images/transfer-logo.png) no-repeat;
+					}
+				}
+				li.menu-mlid-661,li.menu-mlid-662,li.menu-mlid-663{
+					display: inline-block;
+					width: 20px;
+					height: 24px;
+					white-space: nowrap;
+					overflow: hidden;
+					margin-right: 7px;
+					a{
+						color: #a8a7a7;
+						transition:all 0.2s ease-in-out;
+						-webkit-transition:all 0.2s ease-in-out;
+						-o-transition:all 0.2s ease-in-out;
+						-moz-transition:all 0.2s ease-in-out;
+						&:hover{
+							color:$main;
+						}
+						&:before{
+							margin-right: 3px;
+						}
+					}
+				}
+			}
+		}
+
+		ul.pager-load-more{
+			li{
+				display: inline-block;
+				padding: 2px 7px;
+				border: 2px solid $main;
+			}
+		}
+		ul.pager-load-more-empty{
+			display: none;
+		}
+		#block-views-heiankyo-product-block-1:before{
+			content: "";
+			width:80px;
+			height: 2px;
+			background: $main;
+			display: block;
+			margin-bottom: 10px;
+		}
+		#block-views-heiankyo-product-block-1{
+			.view-heiankyo-product{
+				.views-row{
+					position: relative;
+					.views-field-field-product-img{						
+						img{
+							width: 100%;
+						}
+					}
+					.views-field-title{
+						color: #fff;
+						right: 10px;
+						position: absolute;
+						bottom: 10px;
+						font-size: 14px;
+						font-weight: bold;
+						margin: 0px;
+					}
+				}
+				.view-footer{
+					text-align: right;
+					a.all-product:before{
+						content:"";
+						background: url(../images/icon-1.png) no-repeat;
+						display: inline-block;
+						width: 35px;
+						height:29px; 
+						position: relative;
+						top: 10px;
+						margin-right: 5px;
+
+					}
+					a.online-menu:before{
+						content:"";
+						background: url(../images/icon-2.png) no-repeat;
+						display: inline-block;
+						width: 20px;
+						height:29px; 
+						position: relative;
+						top: 10px;
+						margin-right: 5px;
+					}
+					a.delivery-service{
+						background: url(../images/transfer-logo.png) no-repeat;
+						width: 127px;
+						height: 66px;
+						display: inline-block;
+						overflow: hidden;
+						text-indent: -99999px;
+						color: transparent;
+						position: relative;
+						top: 25px;
+					}
+					a{
+						margin-right: 10px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.news-content-area{
+			color:#6b6b6b;
+			.field-name-field-image,.field-name-field-type,.field-name-post-date{
+				text-align: center;
+				
+			}
+			.field-name-field-type{
+				margin:20px 0px 0px 0px;
+				.field-items{
+					display: inline-block;
+					padding: 5px 15px;
+					background: $main;
+					color: #FFF;
+					font-size: 14px;
+					border-radius: 3px;
+				}
+			}
+			h1.title{
+				font-size: 24px;
+				text-align: center;
+				color: #6b6b6b;
+				margin: 0px;
+			}
+			.sharethis-buttons{
+				text-align: center;
+				height: 30px;
+			}
+
+		}
+
+		#block-views-heiankyo-contact-block-1{
+			.views-field-title{
+				font-size:24px; 
+			}
+			.views-field-field-eng-title{
+				font-size:16px; 
+			}
+			.views-field-body{
+				a{
+					color: #898989;
+				}
+			}
+			.views-field-nothing{
+				.comments{
+					a{
+						border: 2px solid $main;
+						background: transparent;
+						padding: 10px 20px;
+						border-radius: 5px;
+						cursor: pointer;
+					
+					}					
+				}
+			}
+		}
+		#block-webform-client-block-16{
+			display: none;
+			h2.block-title{
+				display: none;
+			}
+			.form-item{
+				margin: 10px 0px;
+			}
+			input{
+				border: 1px solid $main; 
+				padding: 10px;
+				border-radius: 5px;
+			}
+			textarea{
+				border: 1px solid $main; 
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.form-actions{
+				text-align: right;
+				input{
+					border: 2px solid $main;
+					background: transparent;
+					padding: 10px 20px;
+					color: $main;
+				}	
+			}
+		}
+		#block-views-heiankyo-home-slide-block-1{
+			#flexslider-1{
+				background: transparent;
+				border: 0px;
+				border-radius: 0px;
+				box-shadow: none;
+				margin: 0px;
+				ul.flex-direction-nav a{
+					overflow: visible;
+					height: 100px;
+					display: block;
+				}
+				ol.flex-control-nav{
+					position: relative;
+					bottom: 30px;
+					z-index:30; 
+					text-align: right;
+					li{
+						a{
+							color: transparent;
+							text-indent: -9999px;
+							overflow: hidden;
+							background: rgba(255,255,255,0.4);
+							&:hover{
+								background: rgba(255,255,255,0.9);
+							}
+						}
+						a.flex-active{
+							background: rgba(255,255,255,0.9);
+						}
+					}
+				}
+			}
+		}
+		.view-heiankyo-home-delivery{
+			ul{
+				margin: 0px;
+				padding: 0px;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+			 
+			    -webkit-flex-wrap: wrap;
+			    -ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+			    li.views-row{
+			    	position: relative;
+			    	list-style-type: none;
+			    	list-style-image: none;
+			        display: -webkit-flex;
+			        display: -ms-flexbox;
+			        display: flex;
+			        margin-bottom: 30px;
+			        .list-wrapper{
+			        	position: relative;
+			        	padding-bottom: 40px;
+			        	.views-field-field-product-jmg{
+				        	img{
+				        		width: 100%;
+				        	}
+				        }
+				        .views-field-field-japan-name{
+				        	a{
+				        		color: $textcolor;
+				        		font-weight: bold;
+				        	}
+				        }
+				        .views-field-commerce-price{
+				        	text-align: right;
+				        }
+			        }
+			        
+			    }
+			}				    
+		}
+		#block-views-heiankyo-news-activity-block-1:before{
+			content: "";
+			width:80px;
+			height: 2px;
+			background: $main;
+			display: block;
+			margin-bottom: 10px;
+		}
+		#block-views-heiankyo-news-activity-block-1{
+			.view-heiankyo-news-activity{
+			ul{
+				margin: 0px;
+				padding: 0px;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+			 
+			    -webkit-flex-wrap: wrap;
+			    -ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+			     li.views-row{
+			    	position: relative;
+			    	list-style-type: none;
+			    	list-style-image: none;
+			        display: -webkit-flex;
+			        display: -ms-flexbox;
+			        display: flex;
+			        margin-bottom: 20px;
+			        .list-wrapper{
+			        	position: relative;
+			        	padding-bottom: 20px;
+			        	.views-field-field-image{
+				        	img{
+				        		width: 100%;
+				        	}
+				        }
+			        }
+			    }
+			}
+		}
+		}
+		
+		.node-product-display{
+			#block-views-heiankyo-home-delivery-block-1{
+				#views_slideshow_cycle_main_heiankyo_home_delivery-block_1{
+					img{
+						width: 100%;
+					}
+				}
+				.views-slideshow-controls-bottom{
+					text-align: center;
+					.views-slideshow-pager-field-item{
+						display: inline-block;
+						cursor: pointer;
+					}
+				}
+			}
+			.field-name-field-product-sort{
+				text-align: center;
+				.field-item{
+					color: #fff;
+					display: inline-block;
+					background: $main;
+					padding: 2px 10px;
+				}
+	      	}
+	      	.field-name-sort{
+	      		text-align: center;
+				span{
+					background: $main;
+					padding: 2px 5px;
+				}
+	      	}
+	      	.field-name-title{
+	      		text-align: center;
+	      		h2{
+	      			margin: 0px;
+	      		}
+	      	}
+	      	.field-name-field-japan-name{
+	      		text-align: center;
+	      		font-size: 18px;
+	      	}
+	      	.field-name-commerce-price{
+	      		text-align: center;
+	      		.field-item:after{
+	      			content:"";
+	      			display: block;
+	      			width: 40px;
+	      			height: 2px;
+	      			background: $main;
+	      			margin: 0 auto;
+	      		}
+	      	}
+	      	.field-name-field-product-reference{
+	      		text-align: center;
+	      		.form-item{
+	      			
+	      		}
+	      		.form-type-textfield.form-item-quantity{
+	      			label{
+	      				display: none;
+	      			}
+	      		}
+	      		.commerce-quantity-plusminus-link{
+	      			a{
+	      				color: $textcolor;
+	      				background: #ccc;
+	      				border-radius: 3px;
+	      				border: 1px solid $textcolor;
+	      			}
+	      		}
+	      		.commerce-quantity-plusminus-link-decrease{
+	      			margin-right: 5px;
+	      		}
+	      		.commerce-quantity-plusminus-link-increase {
+	      			margin-left: 5px;
+	      		}
+	      		input#edit-submit{
+	      				background: $main;
+	      				color: #fff;
+	      				border: 1px $textcolor solid;
+	      				border-radius: 5px;
+	      				padding: 2px 10px;
+	      			}
+	      	}
+	      	.sharethis-buttons{
+	      		text-align: center;
+	      		.stButton{
+	      			width: auto !important;
+	      		}
+	      		.stButton .chicklets{
+	      			margin-right:20px; 
+	      			padding-right:0px;  
+	      			border-right: 1px solid $textcolor;
+	      		}
+	      		.chicklets.twitter{
+	      			background:url(../images/icon_t.jpg) no-repeat;
+	      			width: 23px;
+	      			height:24px;
+	      			padding-left: 24px;
+	      			&:hover{
+	      				background:url(../images/icon_t_h.jpg) no-repeat;
+		      		
+	      			}
+	      		}
+	      		.chicklets.facebook{
+	      			background:url(../images/icon_f.jpg) no-repeat;
+	      			width: 16px;
+	      			height:24px;
+	      			padding-left: 20px;
+	      			&:hover{
+	      				background:url(../images/icon_f_h.jpg) no-repeat;
+		      		
+	      			}
+	      		}
+	      		.chicklets.googleplus{
+	      			background:url(../images/icon_g.jpg) no-repeat;
+	      			width: 25px;
+	      			height:24px;
+	      			padding-left: 15px;
+	      			&:hover{
+	      				background:url(../images/icon_g_h.jpg) no-repeat;
+		      		
+	      			}
+	      		}
+	      		.chicklets.pinterest{
+	      			background:url(../images/icon_p.jpg) no-repeat;
+	      			width: 22px;
+	      			height:24px;
+	      			border:0px !important; 
+	      			padding-left:0px !important; 
+	      			&:hover{
+	      				background:url(../images/icon_p_h.jpg) no-repeat;
+		      		
+	      			}
+	      		}
+	      	}
+	      	.field-name-field-product-composition{
+	      		text-align: center;
+	      	}
+	      	.field-name-shop-info {
+	      		text-align: center;
+	      		p{
+	      			margin: 0px;
+	      		}
+	      	}
+	      	.field-name-body{
+	      		text-align: center;
+	     	 }
+	      	.field-name-field-attention{
+	      		background: #ddd;
+	      		text-align: center;
+	      	}
+	      	.field-name-shop-info2 {
+	      		text-align: center;
+	      		background: #ddd;
+	      		a{
+	      			color: #fff;
+	      			border:2px solid #fff; 
+	      			border-radius:5px; 
+	      			padding: 5px 10px;
+	      			background: #101010;
+	      			&:hover{
+	      				color:$main;
+	      			}
+	      		}
+	      	}
+		}
+		.view-heiankyo-product.view-display-id-page_1{
+			.views-row{
+				width: 100%;
+				clear: both;
+				text-align: center;
+				display: inline-block;
+				.views-field-title{
+					font-size: 36px;
+					font-weight: bold;
+					margin: 20px 0px; 
+				}
+				.views-field-field-japan-name{
+					font-size: 24px;
+					margin: 20px 0px; 
+				}
+				.views-field-field-sub-tilte{
+					font-size: 24px;
+					font-weight: bold;
+					margin: 20px 0px; 
+				}
+				.views-field-field-online-shop{
+					margin-bottom: 20px;
+					a{
+						display: inline-block;
+						border: 1px $main solid;
+						padding: 2px 10px;
+
+					}
+				}
+				.views-field-field-product-img{
+					
+				}
+			}
+		}
+		#node-30{
+			background: #ddd;
+			padding: 10px;
+		}
+	}
+	//end of content
+	
+}
+//end of main
+
+#map{
+	#block-views-heiankyo-contact-block-2{
+		margin-bottom: 0px;
+		.views-field-field-address-map{
+			iframe{
+				width: 100%;
+			}
+		}
+	}
+}
+#contact{
+	clear: both;
+	position: relative;
+	margin-top: 30px;
+	#block-webform-client-block-10{
+		width: 300px;
+		position: absolute;
+		left: 50%;
+		margin-left: -150px;
+		margin-top: 30px;
+		padding-top: 50px;
+		padding-right:55px;
+		background: url(../images/contact-title.png) no-repeat;
+		background-position: right top;
+		top: 0px;
+		z-index: 80;
+		font-size: 16px;
+		.form-item{
+			margin-top: 0px;
+			margin-bottom: 10px;
+		}
+		select#edit-submitted-date-month{
+			width: 50%;
+		}
+		select#edit-submitted-date-day{
+			width: 30%;
+		}
+		input#dp1441782309162{
+			width: 10%;
+		}
+		select#edit-submitted-number-people{
+			width: 100%;
+		}
+		.description{
+			color: $main;
+		}
+		input[type='text']{
+			padding-left: 10px;
+			border-radius: 5px;
+			border: 0px;
+			box-shadow: none;
+			line-height: 32px;
+			height: 32px;
+		}
+		.form-actions{
+			text-align: right;
+			input[type="submit"]{
+				background: #000;
+				color: #FFF;
+				border: 2px #FFF solid;
+				border-radius: 5px;
+				padding: 5px 20px;
+			}
+		}
+		
+		.form-textarea{
+			padding-left: 10px;
+			border-radius: 5px;
+			border: 0px;
+			box-shadow: none;
+			line-height: 32px;
+			height: 100px;
+		}
+	}
+
+}
+
+#footer{
+	font-size: 14px;
+	color: #898989;
+	p{
+		margin: 0px;
+	}
+	a{
+		text-decoration: none;
+		color: $main;
+	}
+}
+.region-bottom{
+	border-top: 1px #898989 solid;
+	color: #898989;
+	padding: 10px 0px;
+	text-align: center;
+	font-size: 12px;
+	a{
+		color: #898989;
+		text-decoration: none;
+		transition:all 0.4s ease-in-out;
+		-webkit-transition:all 0.4s ease-in-out;
+		-o-transition:all 0.4s ease-in-out;
+		-moz-transition:all 0.4s ease-in-out;
+
+		&:hover{
+			color:$main;
+		}
+	}
+	p{
+		margin: 0px;
+	}
+	.block{
+		margin-bottom: 0px;
+	}
+}
+#modalContent{
+	.popups-container{
+		border: 2px solid $main;
+		.modal-header.popups-title{
+			#modal-title{color: $main;}
+		}
+		input[type="submit"]{
+			background: $main;
+			color: #FFF;
+			padding: 5px 10px;
+			box-shadow: none;
+			border: 0px;
+		}
+	}
+}
