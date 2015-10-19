@@ -29,12 +29,34 @@ Drupal.behaviors.my_custom_behavior = {
         marginTop: 50,
       });
     });
-    //alert('test');
+   
+    
     $(".comments a.more").click(function(){
-    $("#block-webform-client-block-16").slideToggle();
-  });
- 
+      $("#block-webform-client-block-16").toggle();
+    });
+     //alert('test');
+   
+    //  $(document).ready(function(){
+    //   $('.responsive-menus span.toggler').slicknav();
+    // });
+    // $(function () {
+    //   $('.responsive-menus #rm-removed ul#rm-removed').hide();
+    //   $('.responsive-menus .toggler').click(function(e) {
+    //     $('.responsive-menus #rm-removed ul#rm-removed').slideDown();
+    //     $('span.toggler').toggleClass('active');
+    //     e.stopPropagation();
+    //   });
+    //   $(document).click(function() {
+    //     if ($('.responsive-menus #rm-removed ul#rm-removed').is(':visible')) {
+    //       $('.responsive-menus #rm-removed ul#rm-removed', this).slideUp(200);
+    //       $('span.toggler').removeClass('active');
+    //     }
+    //   });
+    // });
+     
+    
   }
+   
 };
 
 
